@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:flutter/material.dart';
 import 'package:framework/core/ui/constants/app_colors.dart';
@@ -26,7 +28,9 @@ class _ViewPdfScreenState extends State<ViewPdfScreen> {
     setState(() {
       _loading = true;
     });
-    final doc = await PDFDocument.fromAsset(widget.path);
+    await Future.delayed(Duration(seconds: 2));
+    File file = new File.fromUri(Uri.parse(widget.path));
+    PDFDocument doc = await PDFDocument.fromFile(file);
     setState(() {
       _doc = doc;
       _loading = false;
