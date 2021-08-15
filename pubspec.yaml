@@ -32,9 +32,10 @@ dependencies:
   shared_preferences: 0.5.12+4
   equatable: 1.2.6
   flutter_screenutil: 1.1.0
-  flutter_html_to_pdf: 0.5.2
-  flutter_full_pdf_viewer: 1.0.6
   path_provider: 1.6.28
+  share_extend: 1.1.9
+  pdf: 1.11.2
+  advance_pdf_viewer: 1.2.2
 
 
 dev_dependencies:
