@@ -6,6 +6,7 @@ import 'package:framework/core/ui/constants/app_colors.dart';
 import 'package:framework/core/ui/constants/app_dimens.dart';
 import 'package:framework/core/ui/constants/app_styles.dart';
 import 'package:framework/core/ui/widgets/custom_app_bar.dart';
+import 'package:framework/features/store/presentation/ui/screens/purchase_confirmation.dart';
 
 class ShoppingCartScreen extends StatefulWidget {
   List<Product> productsCartList;
@@ -22,19 +23,24 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
   List<Product> productsCartList;
 
   String shoppingCartTotal;
+  String shoppingCartProductsName;
 
   void updateShoppingCartTotal() {
     List<double> prices = [];
+    List<String> productsName = [];
 
     if (productsCartList.isEmpty) {
       shoppingCartTotal = Formatters.parseCurrency(0);
+      shoppingCartProductsName = '';
     }
 
     for (Product data in productsCartList) {
       prices.add(data.price);
+      productsName.add(data.name);
       double sum = prices.reduce((previous, current) => previous + current);
 
       shoppingCartTotal = Formatters.parseCurrency(sum);
+      shoppingCartProductsName = productsName.join(", ");
     }
   }
 
@@ -92,7 +98,7 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                 height: 100,
                 padding: EdgeInsets.all(AppDimens.small),
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.background,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                   boxShadow: [
                     BoxShadow(
                       color: const Color(0x29000000),
@@ -120,7 +126,17 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
                           'Confirmar a compra',
                           style: AppStyles.regular12().copyWith(color: AppColors.white_900),
                         ),
-                        onPressed: () {},
+                        onPressed: productsCartList.length > 0
+                            ? () {
+                                Navigator.of(context).pushNamed(
+                                  'purchaseConfirmation',
+                                  arguments: PurchaseConfirmationScreenArguments(
+                                    purchaseValue: shoppingCartTotal,
+                                    purchaseProducts: shoppingCartProductsName,
+                                  ),
+                                );
+                              }
+                            : null,
                       ),
                     )
                   ],
