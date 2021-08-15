@@ -40,6 +40,24 @@ class ApiHelper {
         'imagem': 'assets/img/fruits/abacaxi.jpg',
         'preco': 5.00,
       },
+      {
+        'id': 7,
+        'nome': 'Coco',
+        'imagem': 'assets/img/fruits/coco.jpeg',
+        'preco': 6.00,
+      },
+      {
+        'id': 8,
+        'nome': 'Goiaba',
+        'imagem': 'assets/img/fruits/goiaba.jpeg',
+        'preco': 6.00,
+      },
+      {
+        'id': 9,
+        'nome': 'Jaca',
+        'imagem': 'assets/img/fruits/jaca.jpg',
+        'preco': 10.00,
+      },
     ];
 
     if (responseMap.isNotEmpty) {
