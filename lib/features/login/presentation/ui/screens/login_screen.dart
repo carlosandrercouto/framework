@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
       // Cor ícones StatusBar IOS
       statusBarBrightness: Brightness.dark,
       // Cor da Navigation Bar Android(Não disponível em todos os devices)
-      systemNavigationBarColor: AppColors.endGradientColor,
+      systemNavigationBarColor: AppColors.black_900,
     ));
 
     return Scaffold(
