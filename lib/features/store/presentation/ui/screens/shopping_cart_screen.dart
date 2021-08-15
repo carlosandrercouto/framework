@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:framework/core/entities/product.dart';
 import 'package:framework/core/formatters/formatters.dart';
 import 'package:framework/core/ui/constants/app_colors.dart';
@@ -52,7 +51,6 @@ class _ShoppingCartScreenState extends State<ShoppingCartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(statusBarColor: Colors.white));
     return Scaffold(
       appBar: CustomAppBar(
         title: 'Carrinho de Compras',
