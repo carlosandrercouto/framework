@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'features/login/presentation/ui/screens/login_screen.dart';
+import 'features/store/presentation/ui/screens/purchase_confirmation.dart';
 import 'features/store/presentation/ui/screens/shopping_cart_screen.dart';
 import 'features/store/presentation/ui/screens/store_screen.dart';
 
@@ -9,6 +10,10 @@ Map<String, dynamic> routes = <String, dynamic>{
   'login': (args) => LoginScreen(),
   'store': (args) => StoreScreen(),
   'shoppingCart': (ShoppingCartScreenArguments args) => ShoppingCartScreen(productsCartList: args.productsCartList),
+  'purchaseConfirmation': (PurchaseConfirmationScreenArguments args) => PurchaseConfirmationScreen(
+        purchaseProducts: args.purchaseProducts,
+        purchaseValue: args.purchaseValue,
+      ),
 };
 
 List<String> routesRoutedByCupertino = [];
