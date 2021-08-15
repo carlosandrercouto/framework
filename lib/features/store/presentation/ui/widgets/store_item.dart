@@ -52,7 +52,7 @@ class _StoreItemState extends State<StoreItem> {
                     maxLines: 1,
                   ),
                   SizedBox(height: AppDimens.small),
-                  Text('R\$ ${widget.price} a unidade', style: AppStyles.bold14()),
+                  Text(widget.price, style: AppStyles.bold14()),
                   SizedBox(height: AppDimens.small),
                   ElevatedButton(
                     style: ButtonStyle(backgroundColor: MaterialStateProperty.all(widget.colorButton)),

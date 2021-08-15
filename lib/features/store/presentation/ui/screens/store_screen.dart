@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:framework/core/entities/product.dart';
+import 'package:framework/core/formatters/formatters.dart';
 import 'package:framework/core/helpers/api_helper.dart';
 import 'package:framework/core/ui/constants/app_colors.dart';
 import 'package:framework/core/ui/widgets/custom_app_bar.dart';
@@ -28,7 +29,7 @@ class _StoreScreenState extends State<StoreScreen> {
   void searchProducts(String query) {
     final products = allProductsList.where((product) {
       final productNameLower = product.name.toLowerCase();
-      final productPriceLower = product.price.toLowerCase();
+      final productPriceLower = Formatters.parseCurrency(product.price);
       final productSearchLower = query.toLowerCase();
 
       return productNameLower.contains(productSearchLower) || productPriceLower.contains(productSearchLower);
@@ -93,7 +94,7 @@ class _StoreScreenState extends State<StoreScreen> {
                   return StoreItem(
                     image: productsList[index].image,
                     name: productsList[index].name,
-                    price: productsList[index].price,
+                    price: Formatters.parseCurrency(productsList[index].price),
                     titleButton: getTextButton(index),
                     colorButton: getColorButton(index),
                     onPressed: () {

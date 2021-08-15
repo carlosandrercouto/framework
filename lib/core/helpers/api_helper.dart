@@ -14,31 +14,31 @@ class ApiHelper {
         'id': 1,
         'nome': 'Pêra',
         'imagem': 'assets/img/fruits/pera.jpg',
-        'preco': '2,00',
+        'preco': 2.00,
       },
       {
         'id': 2,
         'nome': 'Maça',
         'imagem': 'assets/img/fruits/maca.jpg',
-        'preco': '3,00',
+        'preco': 3.00,
       },
       {
         'id': 4,
         'nome': 'Banana',
         'imagem': 'assets/img/fruits/banana.jpeg',
-        'preco': '4,00',
+        'preco': 4.00,
       },
       {
         'id': 5,
         'nome': 'Manga',
         'imagem': 'assets/img/fruits/manga.jpg',
-        'preco': '2,50',
+        'preco': 2.50,
       },
       {
         'id': 6,
         'nome': 'Abacaxi',
         'imagem': 'assets/img/fruits/abacaxi.jpg',
-        'preco': '5,00',
+        'preco': 5.00,
       },
     ];
 
